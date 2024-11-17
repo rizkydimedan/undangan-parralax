@@ -127,13 +127,15 @@
 
       <!-- Date pick -->
       <div class="bg-white flex items-center justify-center h-[800px] mx-0 px-0 mt-12">
-        <div class=" bg-fixed bg-cover bg-center bg-no-repeat h-full w-full"
+        <div class=" bg-fixed bg-cover bg-center bg-no-repeat h-full w-full "
           style="background-image: url('../src/img/pasangan.jpg');">
+         
           <div
             class="relative bg-transparent  overflow-hidden w-full max-w-lg h-full flex flex-row items-start justify-center">
-            <div class="basis-10/12 p-6 space-y-12 text-white flex flex-col justify-center ">
-              <h1 class="text-2xl font-bold">Menghitung Hari</h1>
+            <div class="absolute bg-black bg-opacity-80 inset-0 w-full h-full z-0 pointer-events-none"></div>
 
+            <div class="basis-10/12 p-6 space-y-12 text-white flex flex-col justify-center z-10">
+              <h1 class="text-2xl font-bold">Menghitung Hari</h1>
               <p class="text-[14px]">
                 وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا
                 وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
@@ -158,7 +160,7 @@
               <p class=" mt-4 text-sm">- Ar-Rum • Ayat 21 -</p>
             </div>
 
-            <div class="basis-2/12 right-0 top-0 bg-gray-900 text-white text-center pt-7 pb-20">
+            <div class="basis-2/12 right-0 top-0 bg-gray-900 text-white text-center pt-7 pb-20 z-20">
               <div class="flex flex-col items-center gap-24">
                 <div class="flex flex-col items-center transform -rotate-90">
                   <span class="text-lg font-bold ">5</span>
@@ -180,14 +182,14 @@
             </div>
 
             <div
-              class="bottom-0 right-0 absolute bg-transparent w-0 h-0 border-b-[300px] border-l-[525px] border-l-transparent rounded-none ">
+              class="bottom-0 right-0 absolute bg-transparent w-0 h-0 border-b-[300px] border-l-[555px] border-l-transparent rounded-none z-20">
             </div>
 
             <div class="w-40 h-[218px] bottom-8 overflow-hidden bg-white mx-auto absolute z-30">
               <img src="../src/img/prewed-square.jpg" class="aspect-auto bg-cover bg-center bg-no-repeat w-full h-full"
                 alt="">
             </div>
-            <div class="flex flex-row justify-center w-full bg-transparent absolute bottom-0 ">
+            <div class="flex flex-row justify-center w-full bg-transparent absolute bottom-0 z-20 ">
               <div
                 class="bottom-0 border-white left-0 bg-transparent w-full h-0 border-b-[25px] border-l-[5px] border-r-[25px] border-r-transparent rounded-none">
               </div>
@@ -200,7 +202,6 @@
 
         </div>
       </div>
-
       <!-- Date pick -->
 
       <!-- Save Date Acara -->
@@ -414,11 +415,12 @@
       </div>
       <!-- KETERANGAN -->
 
-      <div class="mt-5 w-full h-[950px] flex flex-col relative mx-0 px-0 bg-gray-100">
+      <!-- Pertemuan -->
+      <div class="mt-5 w-full h-[950px] flex flex-col relative mx-0 px-0 bg-zinc-800 shadow-inner shadow-black">
         <!-- Header Our Story -->
         <div class="text-center w-full py-16">
-          <h1 class="text-4xl font-bold text-gray-800 mb-2">Our Story</h1>
-          <p class="text-lg text-gray-600">Momen indah kita berdua</p>
+          <h1 class="text-4xl font-bold text-white mb-2">Our Story</h1>
+          <p class="text-lg text-white">Momen indah kita berdua</p>
         </div>
 
         <!-- Konten -->
@@ -460,10 +462,19 @@
               alt="Wedding Potret">
           </div>
         </div>
-
+        <div class="absolute border-b-2 border-white bottom-16 right-0 w-4/5 z-10"></div>
         <!-- Gradient Background -->
-        <div class="absolute w-full bottom-0 h-32 bg-gradient-to-t from-gray-800 to-transparent"></div>
+        <div class="absolute w-full bottom-0 h-32 bg-gradient-to-t from-black to-transparent z-0"></div>
       </div>
+      <!-- Pertemua -->
+
+      <div class="w-full pt-5 bg-zinc-800 h-auto">
+        <h1 class="text-white text-center text-3xl font-bold">Gallery</h1>
+        <div class="aspect-video w-full text-center flex justify-center mt-4">          
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/7ztcdznpX9w?si=OM01zJr-M6_8_7TI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
 
     </div>
   </section>
