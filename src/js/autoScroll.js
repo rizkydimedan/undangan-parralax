@@ -3,6 +3,11 @@ let scrolling = false; // Status scroll
 let animationFrameId = null; // ID animasi untuk membatalkan scroll
 const iconActive = ["bg-blue-500", "rounded-lg", "text-white", "hover:text-white"];
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  startScroll();
+});
+
 // Fungsi untuk memulai atau menghentikan scroll
 button.addEventListener('click', () => {
   if (scrolling) {
