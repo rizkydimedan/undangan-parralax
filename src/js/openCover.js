@@ -7,8 +7,8 @@ const active = ['bg-blue-500', 'p-1', 'text-white', 'hover:text-white', 'rounded
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('videoFrame', {
         playerVars: {
-            'autoplay': 1, // Jangan mulai otomatis, kontrol diatur oleh status
-            'start': 0,    // Mulai dari awal video
+            'autoplay': 1, 
+            'start': 0,    
         },
         events: {
             onReady: onPlayerReady,
@@ -21,15 +21,15 @@ function onPlayerReady(event) {
     if (toggleButton) {
         toggleButton.addEventListener('click', function ()   {
             if (isPlaying) {
-                player.pauseVideo(); // Jeda video
+                player.pauseVideo(); 
                 toggleButton.classList.remove(...active);
-                isPlaying = false; // Update status
+                isPlaying = false; 
             } else {
-                player.playVideo(); // Mainkan video
+                player.playVideo(); 
                 toggleButton.classList.add(...active);
-                isPlaying = true; // Update status
+                isPlaying = true; 
             }
-            localStorage.setItem('isPlaying', JSON.stringify(isPlaying)); // Simpan status ke localStorage
+       
 
         });
     }
@@ -42,7 +42,6 @@ buttonCover.addEventListener('click', () => {
         isPlaying = true;
         toggleButton.classList.add(...active);
     }
-    localStorage.setItem('isPlaying', JSON.stringify(isPlaying)); // Simpan status ke localStorage
 
 });
 

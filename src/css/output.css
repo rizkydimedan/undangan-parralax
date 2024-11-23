@@ -1598,6 +1598,14 @@ video {
   --tw-bg-opacity: 0.8;
 }
 
+.bg-opacity-100 {
+  --tw-bg-opacity: 1;
+}
+
+.bg-opacity-75 {
+  --tw-bg-opacity: 0.75;
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1975,6 +1983,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-opacity-100 {
+  --tw-text-opacity: 1;
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -2002,6 +2014,10 @@ video {
 
 .opacity-75 {
   opacity: 0.75;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .shadow {
