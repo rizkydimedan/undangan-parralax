@@ -2,13 +2,18 @@ const button = document.getElementById('scrollButton');
 let scrolling = false; // Status scroll
 let animationFrameId = null; // ID animasi untuk membatalkan scroll
 const iconActive = ["bg-blue-500", "rounded-lg", "text-white", "hover:text-white"];
-
-
-document.addEventListener("DOMContentLoaded", () => {
+const buttonCover = document.getElementById('openCover');
+const cover = document.getElementById('cover');
+const content = document.getElementById('content');
+// openCover
+buttonCover.addEventListener('click', () => {
+  cover.classList.remove('visible');
+  cover.classList.add('invisible');
+  content.classList.remove('invisible');
   startScroll();
 });
 
-// Fungsi untuk memulai atau menghentikan scroll
+// play / stop scroll
 button.addEventListener('click', () => {
   if (scrolling) {
     stopScroll();
@@ -17,7 +22,8 @@ button.addEventListener('click', () => {
   }
 });
 
-// Fungsi untuk memulai scroll
+
+// play Scroll
 function startScroll() {
   scrolling = true;
   button.classList.add(...iconActive);
@@ -37,7 +43,7 @@ function startScroll() {
       window.scrollTo(0, currentY + step); // Geser sesuai step
       animationFrameId = requestAnimationFrame(scrollStep);
     } else {
-      // Pastikan mencapai posisi akhir dan reset status
+      //  mencapai posisi akhir dan reset status
       window.scrollTo(0, endY);
       stopScroll();
     }
@@ -53,6 +59,6 @@ function stopScroll() {
   button.classList.remove(...iconActive);
 }
 
-// Hentikan animasi scroll jika pengguna menggulir secara manual
-window.addEventListener('wheel', { passive: true});
-window.addEventListener('touchmove', { passive: true });
+// animasi scroll manual
+window.addEventListener('wheel', stopScroll, { passive: true});
+window.addEventListener('touchmove', stopScroll, { passive: true });
