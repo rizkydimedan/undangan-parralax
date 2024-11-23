@@ -1,19 +1,36 @@
- // JavaScript untuk membuka dan menutup modal
- const openModal = document.getElementById('openModal');
+// MOdal qr
+const openModal = document.getElementById('openModalQr');
  const closeModal = document.getElementById('closeModal');
  const modal = document.getElementById('modal');
 
  openModal.addEventListener('click', () => {
-   modal.classList.remove('invisible'); 
+   modal.classList.remove('invisible');
  });
 
  closeModal.addEventListener('click', () => {
-   modal.classList.add('invisible'); // Sembunyikan modal
+   modal.classList.add('invisible'); 
  });
 
- // Optional: Tambahkan event untuk menutup modal jika area di luar modal diklik
  modal.addEventListener('click', (event) => {
    if (event.target === modal) {
      modal.classList.add('invisible');
    }
  });
+
+
+
+//  image Modal
+function openModalImg(img){
+  const modalImg = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+    modalImage.src = img.src;
+    modalImg.classList.remove('invisible'); 
+   
+  }   
+  
+  
+    function closeModalImg() {
+      const modalImg = document.getElementById('imageModal');
+      modalImg.classList.add('invisible'); 
+     
+    }
