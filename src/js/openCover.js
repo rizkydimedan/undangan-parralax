@@ -7,8 +7,8 @@ const active = ['bg-blue-500', 'p-1', 'text-white', 'hover:text-white', 'rounded
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('videoFrame', {
         playerVars: {
-            'autoplay': 1, 
-            'start': 0,    
+            'autoplay': 1,
+            'start': 0
         },
         events: {
             onReady: onPlayerReady,
@@ -18,32 +18,47 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
 
-    if (toggleButton) {
-        toggleButton.addEventListener('click', function ()   {
-            if (isPlaying) {
-                player.pauseVideo(); 
-                toggleButton.classList.remove(...active);
-                isPlaying = false; 
-            } else {
-                player.playVideo(); 
+    // // Set status awal sesuai dengan localStorage
+    if (isPlaying) {
+        player.playVideo();
+        toggleButton.classList.add(...active);
+    } else {
+        player.pauseVideo();
+        toggleButton.classList.remove(...active);
+    }
+
+    // Play onclick btnCover id di autoscroll.js
+    if (buttonCover) {
+        buttonCover.addEventListener('click', () => {
+            player.playVideo();
+            isPlaying = true;
+            if (toggleButton) {
                 toggleButton.classList.add(...active);
-                isPlaying = true; 
             }
-       
+            localStorage.setItem('isPlaying', JSON.stringify(isPlaying)); // Simpan status ke localStorage
+
+        });
+    }
+
+    if (toggleButton) {
+        toggleButton.addEventListener('click', function () {
+            if (isPlaying) {
+                player.pauseVideo();
+                toggleButton.classList.remove(...active);
+                isPlaying = false;
+            } else {
+                player.playVideo();
+                toggleButton.classList.add(...active);
+                isPlaying = true;
+            }
+            localStorage.setItem('isPlaying', JSON.stringify(isPlaying)); // Simpan status ke localStorage
 
         });
     }
 }
 
-// Play onclick btnCover id di autoscroll.js
-buttonCover.addEventListener('click', () => {
-    if (toggleButton) {
-        player.playVideo();
-        isPlaying = true;
-        toggleButton.classList.add(...active);
-    }
 
-});
+
 
 // Load the YouTube IFrame API
 const tag = document.createElement('script');
